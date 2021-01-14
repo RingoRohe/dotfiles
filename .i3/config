@@ -148,15 +148,15 @@ bindsym Ctrl+Mod1+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:Web
-set $ws2 2:misc
-set $ws3 3:Development
+set $ws1 1:web
+set $ws2 2:dev
+set $ws3 3:misc
 set $ws4 4
 set $ws5 5
 set $ws6 6
 set $ws7 7
-set $ws8 8
-set $ws8 9:Music
+set $ws8 8:music
+set $ws9 9:mail
 
 # switch to workspace
 bindsym Ctrl+Mod1+1 workspace $ws1
@@ -197,7 +197,8 @@ bindsym Ctrl+Mod1+Shift+9 move container to workspace $ws9; workspace $ws9
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 assign [class="firefox"] $ws1
-assign [class="Code"] $ws3
+assign [class="Code"] $ws2
+assign [class="Evolution"] $ws9
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -301,7 +302,9 @@ exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 #exec --no-startup-id xautolock -time 10 -locker 'betterlockscreen -l blur'
-exec --no-startup-id xidlehook --not-when-audio --timer 360 "betterlockscreen -l dim" ''
+exec --no-startup-id xidlehook --not-when-audio --timer 300 "betterlockscreen -l blur" ''
+exec --no-startup-id evolution
+exec --no-startup-id firefox
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -340,7 +343,7 @@ set_from_resource $term_color15    color15
 bar {
 	i3bar_command i3bar
 	status_command i3status
-	position bottom
+	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
@@ -434,3 +437,6 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# add alternate tiling
+exec_always --no-startup-id ~/.i3/alternating_layouts.py
