@@ -101,6 +101,7 @@ export LANG=en_US.UTF-8
 
 alias rm='rm -i'
 alias mv='mv -i'
+alias ls='ls -Ahl'
 
 # run neofetch if present
 if [ -f /usr/bin/neofetch ]
