@@ -18,12 +18,12 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #050505
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = #f0f0f0
 foreground-alt = #ccc
-primary = #DDD
+primary = #8aac8b
 secondary = #e60053
 alert = #bd2c40
 
@@ -34,13 +34,13 @@ height = 32
 ;offset-x = 0%
 ;offset-y = 0%
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
-line-color = ${colors.foreground}
+line-size = 2
+line-color = ${colors.primary}
 
 border-size = 0
 border-color = #000000
@@ -52,7 +52,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 ;font-0 = fixed:pixelsize=12;1
-font-0 = "Courier New:weight = Regular:size=10;0"
+font-0 = "Courier New:weight = Regular:size=11;0"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome 5 Free:pixelsize=10;0
@@ -61,7 +61,7 @@ font-5 = Font Awesome 5 Brands:pixelsize=10;0
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = pulseaudio filesystem memory cpu battery
+modules-right = pulseaudio cpu memory filesystem battery
 
 tray-position = right
 tray-padding = 2
@@ -103,7 +103,16 @@ interval = 60
 
 mount-0 = /
 
-label-mounted =  %free%/%total%
+format-mounted = [  <label-mounted> ]
+
+bar-used-width = 7
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-indicator = 
+bar-used-fill-foreground = ${colors.primary}
+bar-used-empty-foreground = ${colors.background-alt}
+
+label-mounted = %used%/%total%
 label-unmounted =  not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -137,7 +146,7 @@ label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
@@ -157,7 +166,13 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format = [  <label> ]
+bar-load-width = 7
+bar-load-fill = ▐
+bar-load-empty = ▐
+bar-load-indicator = 
+bar-load-fill-foreground = ${colors.primary}
+bar-load-empty-foreground = ${colors.background-alt}
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.background}
 label = %percentage:2%%
@@ -165,7 +180,13 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format = [  <label> ]
+bar-used-width = 7
+bar-used-fill = ▐
+bar-used-empty = ▐
+bar-used-indicator = 
+bar-used-fill-foreground = ${colors.primary}
+bar-used-empty-foreground = ${colors.background-alt}
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.background}
 label = %percentage_used%%
@@ -212,8 +233,8 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %d.%m.%Y"
-date-alt = " %d.%m%Y"
+date = "%d.%m.%Y"
+date-alt = "%d.%m%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -222,34 +243,35 @@ format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.background}
 
-label = %time% - %date%
+label =  %time% / %date% 
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
-label-muted-foreground = #666
+label-muted-foreground = ${colors.background-alt}
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = ${colors.primary}
+bar-volume-foreground-5 = ${colors.primary}
+bar-volume-foreground-6 = ${colors.primary}
 bar-volume-gradient = false
 bar-volume-indicator = O
 bar-volume-indicator-font = 1
+bar-volume-indicator-foreground = ${colors.primary}
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = ${colors.primary}
 
 [module/alsa]
 type = internal/alsa
