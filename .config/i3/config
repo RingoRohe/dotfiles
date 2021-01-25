@@ -283,7 +283,7 @@ mode "resize" {
 bindsym $mod+Escape exec betterlockscreen -l blur
 
 # Auto-lock Screen
-exec --no-startup-id xidlehook --not-when-audio --timer 300 "betterlockscreen -l blur" ''
+exec --no-startup-id xidlehook --not-when-audio --timer 600 "betterlockscreen -l blur" ''
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -296,9 +296,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-#exec --no-startup-id xautolock -time 10 -locker blurlock
-#exec --no-startup-id xautolock -time 10 -locker 'betterlockscreen -l blur'
-exec --no-startup-id evolution
+exec --no-startup-id "sh -c 'sleep 10; exec evolution'" # sleep 10 seconds before autostarting evolution
 exec --no-startup-id firefox
 # exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
@@ -349,7 +347,7 @@ set_from_resource $term_color15    color15
 #############################
 
 # Set inner/outer gaps
-gaps inner 30
+gaps inner 50
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
@@ -403,4 +401,4 @@ exec ~/.scripts/startup.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # add alternate tiling
-exec_always --no-startup-id ~/.i3/alternating_layouts.py
+exec_always --no-startup-id ~/.config/i3/alternating_layouts.py

@@ -8,4 +8,4 @@ configuration {
     show-icons: true;
     matching: "fuzzy";
 }
-@import "/home/ringo/.config/rofi/themes/errpunkterr.rasi"
+@import "/usr/share/rofi/themes/Monokai.rasi"
