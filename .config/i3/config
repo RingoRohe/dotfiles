@@ -3,6 +3,7 @@
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+set $modAlt Mod1
 set $terminal alacritty
 
 # set default desktop layout (default is tiling)
@@ -117,9 +118,9 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+k layout stacking
-bindsym $mod+Shift+t layout tabbed
-bindsym $mod+Shift+l layout toggle split
+bindsym $mod+$modAlt+s layout stacking
+bindsym $mod+$modAlt+t layout tabbed
+bindsym $mod+$modAlt+g layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -128,7 +129,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # toggle sticky
-bindsym $mod+Shift+s sticky toggle
+# bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -141,8 +142,8 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
-bindsym Ctrl+Mod1+Right workspace next
-bindsym Ctrl+Mod1+Left workspace prev
+bindsym Ctrl+$modAlt+Right workspace next
+bindsym Ctrl+$modAlt+Left workspace prev
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -159,15 +160,15 @@ set $ws8 8
 set $ws9 9
 
 # switch to workspace
-bindsym Ctrl+Mod1+1 workspace $ws1
-bindsym Ctrl+Mod1+2 workspace $ws2
-bindsym Ctrl+Mod1+3 workspace $ws3
-bindsym Ctrl+Mod1+4 workspace $ws4
-bindsym Ctrl+Mod1+5 workspace $ws5
-bindsym Ctrl+Mod1+6 workspace $ws6
-bindsym Ctrl+Mod1+7 workspace $ws7
-bindsym Ctrl+Mod1+8 workspace $ws8
-bindsym Ctrl+Mod1+9 workspace $ws9
+bindsym Ctrl+$modAlt+1 workspace $ws1
+bindsym Ctrl+$modAlt+2 workspace $ws2
+bindsym Ctrl+$modAlt+3 workspace $ws3
+bindsym Ctrl+$modAlt+4 workspace $ws4
+bindsym Ctrl+$modAlt+5 workspace $ws5
+bindsym Ctrl+$modAlt+6 workspace $ws6
+bindsym Ctrl+$modAlt+7 workspace $ws7
+bindsym Ctrl+$modAlt+8 workspace $ws8
+bindsym Ctrl+$modAlt+9 workspace $ws9
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -181,15 +182,15 @@ bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
 
 # Move to workspace with focused container
-bindsym Ctrl+Mod1+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym Ctrl+Mod1+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym Ctrl+Mod1+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym Ctrl+Mod1+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym Ctrl+Mod1+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym Ctrl+Mod1+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym Ctrl+Mod1+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym Ctrl+Mod1+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym Ctrl+Mod1+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym Ctrl+$modAlt+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym Ctrl+$modAlt+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym Ctrl+$modAlt+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym Ctrl+$modAlt+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym Ctrl+$modAlt+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym Ctrl+$modAlt+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym Ctrl+$modAlt+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym Ctrl+$modAlt+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym Ctrl+$modAlt+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -334,7 +335,7 @@ set_from_resource $term_color15    color15
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #6a9c6b #FFFFFF #FDE3F6
+  client.focused          #556064 #6A9001 #FFFFFF #FDE3F6
   client.focused_inactive #2F3D44 #2F3D44 #FFFFFF #454948
   client.unfocused        #2F3D44 #2F3D44 #FFFFFF #454948
   client.urgent           #ac8a8c #FDF6E3 #1ABC9C #268BD2
