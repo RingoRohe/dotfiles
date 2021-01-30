@@ -9,3 +9,4 @@ configuration {
     matching: "fuzzy";
 }
 @import "/usr/share/rofi/themes/Monokai.rasi"
+@import "~/.cache/wal/colors-rofi-dark"

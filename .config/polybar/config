@@ -19,13 +19,13 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 transparent = #00000000
-background = #070D03
-background-alt = #161A02
-;foreground = ${xrdb:color7:#222}
-foreground = #f0f0f0
-foreground-alt = #ccc
-primary = #6A9001
-secondary = #FED7A2
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#fff}
+background-alt = ${xrdb:color4:#222}
+foreground-alt = ${xrdb:color6:#ccc}
+primary = ${xrdb:color2:#55F}
+secondary = ${xrdb:color1:#5F5}
+tertiary = ${xrdb:color5:#5F5}
 alert = #bd2c40
 
 [bar/top]
@@ -37,20 +37,20 @@ height = 32
 radius = 0
 fixed-center = true
 
-background = ${colors.transparent}
+background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
-line-color = ${colors.primary}
+line-size = 2
+line-color = ${colors.tertiary}
 
 border-size = 0
 border-color = #000000
 
-padding-left = 10
-padding-right = 10
+padding-left = 0
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = fixed:pixelsize=12;1
 ;font-0 = "Courier New:weight = Regular:size=11;0"
@@ -60,13 +60,14 @@ font-3 = Font Awesome 5 Free:pixelsize=10;0
 font-4 = Font Awesome 5 Free Solid:pixelsize=10;0
 font-5 = Font Awesome 5 Brands:pixelsize=10;0
 
-modules-left = xwindow
+modules-left = i3 xwindow
 modules-center = date
 modules-right = pulseaudio cpu memory filesystem battery
 
 tray-position = none
 tray-padding = 2
-tray-background = ${colors.primary}
+tray-background = ${colors.foreground}
+tray-foreground = ${colors.background}
 
 ;wm-restack = i3
 
@@ -131,7 +132,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
+label = "            %title:0:50:...%"
 format-background = ${colors.background}
 format-padding = 2
 
@@ -280,7 +281,7 @@ bar-used-indicator =
 bar-used-fill-foreground = ${colors.primary}
 bar-used-empty-foreground = ${colors.background-alt}
 
-format-underline = ${colors.background}
+format-underline = ${colors.transparent}
 
 label = %percentage_used%%
 label-background = ${colors.primary}
@@ -301,9 +302,9 @@ format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.background}
 
-label =  %time% / %date% 
-label-background = ${colors.foreground}
-label-foreground = ${colors.background}
+label =  %time% /  %date%
+label-background = ${colors.background}
+label-foreground = ${colors.foreground}
 label-padding = 2
 
 [module/pulseaudio]
@@ -337,8 +338,10 @@ format-charging-prefix-foreground = ${colors.background}
 format-charging-prefix-background = ${colors.foreground}
 format-charging-prefix-padding = 2
 
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.background}
+format-charging = <label-charging> <animation-charging>
+format-charging-underline = ${colors.transparent}
+format-charging-background = ${colors.primary}
+format-charging-foreground = ${colors.foreground}
 
 format-discharging-prefix = 
 format-discharging-prefix-foreground = ${colors.background}
@@ -347,22 +350,27 @@ format-discharging-prefix-padding = 2
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
+format-discharging-background = ${colors.primary}
+format-discharging-foreground = ${colors.foreground}
 
 format-full-prefix = 
 format-full-prefix-foreground = ${colors.background}
 format-full-prefix-background = ${colors.foreground}
 format-full-prefix-padding = 2
 
-label-full = " %percentage%%  "
 format-full = <label-full>
 format-full-background = ${colors.primary}
 format-full-foreground = ${colors.foreground}
-format-padding = 2
 format-full-underline = ${self.format-charging-underline}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+label-full = "  %percentage%%  "
+label-charging = "  %percentage%%"
+label-discharging = "  %percentage%%  "
+format-padding = 2
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 

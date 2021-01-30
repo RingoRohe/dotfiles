@@ -108,3 +108,6 @@ if [ -f /usr/bin/neofetch ]
 then
     neofetch
 fi
+
+# load pywal colors
+(cat ~/.cache/wal/sequences &)

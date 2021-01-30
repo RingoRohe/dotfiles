@@ -5,6 +5,13 @@
 set $mod Mod4
 set $modAlt Mod1
 set $terminal alacritty
+set $background '/home/ringo/Bilder/Wallpaper/03 Radrunde_20160903_103701.jpg'
+
+# update lockscreen image path
+exec --no-startup-id betterlockscreen -u $background
+
+# load background and colors with pywal
+exec_always --no-startup-id wal -i $background --saturate 0.7
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -76,7 +83,8 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 ### custom bindings
 bindsym $mod+e exec nemo
 bindsym $mod+p exec pamac-manager
-bindsym $mod+End exec --no-startup-id i3exit hibernate, mode "default"
+# bindsym $mod+End exec --no-startup-id i3exit hibernate, mode "default"
+bindsym $mod+End exec betterlockscreen -s blur
 
 focus_follows_mouse no
 
@@ -279,6 +287,10 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+bindsym Ctrl+$mod+Left resize shrink width 5 px or 5 ppt
+bindsym Ctrl+$mod+Right resize grow width 5 px or 5 ppt
+bindsym Ctrl+$mod+Up resize grow height 5 px or 5 ppt
+bindsym Ctrl+$mod+Down resize shrink height 5 px or 5 ppt
 
 # Lock screen
 bindsym $mod+Escape exec betterlockscreen -l blur
@@ -288,7 +300,7 @@ exec --no-startup-id xidlehook --not-when-audio --timer 600 "betterlockscreen -l
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+# exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -297,7 +309,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id "sh -c 'sleep 10; exec evolution'" # sleep 10 seconds before autostarting evolution
+exec --no-startup-id "sh -c 'sleep 60; exec evolution'" # sleep 60 seconds before autostarting evolution
 exec --no-startup-id firefox
 # exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
@@ -334,21 +346,34 @@ set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
 # Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #6A9001 #FFFFFF #FDE3F6
-  client.focused_inactive #2F3D44 #2F3D44 #FFFFFF #454948
-  client.unfocused        #2F3D44 #2F3D44 #FFFFFF #454948
-  client.urgent           #ac8a8c #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000
 
-  client.background       #050505
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color0 #f0f0f0
+set_from_resource $bg-alt i3wm.color0 #f0f0f0
+set_from_resource $primary i3wm.color2 #f0f0f0
+set_from_resource $secondary i3wm.color1 #f0f0f0
+set_from_resource $tertiary i3wm.color5 #f0f0f0
+
+# class                   border        backgr.       text            indic.   child_border
+  client.focused          #556064       $primary      $fg             $fg
+  client.focused_inactive #2F3D44       $bg-alt       $fg             #454948
+  client.unfocused        #2F3D44       #2F3D44       $fg             #454948
+  client.urgent           #ac8a8c       #FDF6E3       #1ABC9C         #268BD2
+  client.placeholder      $bg           #0c0c0c       $fg             $bg
+
+  client.background       $bg
 
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Set inner/outer gaps
-gaps inner 50
+gaps inner 30
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
