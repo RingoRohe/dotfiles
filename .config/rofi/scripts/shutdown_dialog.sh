@@ -4,7 +4,7 @@
 #
 ###
 
-hostname=$(echo uname -n)
+hostname=$(uname -n)
 
 DMENU='rofi -dmenu'
 choice=$(echo -e "shutdown\nreboot\nsuspend\nlogout\nhibernate\nlock" | $DMENU)
