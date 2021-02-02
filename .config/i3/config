@@ -269,7 +269,7 @@ mode "$mode_system" {
 }
 
 # rofi shutdown menu
-bindsym $mod+0 exec sh /home/ringo/.config/rofi/scripts/shutdown_dialog_i3.sh
+bindsym $mod+0 exec sh /home/ringo/.config/rofi/scripts/shutdown_dialog.sh
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -307,7 +307,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
+exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id "sh -c 'sleep 60; exec evolution'" # sleep 60 seconds before autostarting evolution
 exec --no-startup-id firefox
