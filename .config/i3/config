@@ -287,10 +287,10 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym Ctrl+$mod+Left resize shrink width 5 px or 5 ppt
-bindsym Ctrl+$mod+Right resize grow width 5 px or 5 ppt
-bindsym Ctrl+$mod+Up resize grow height 5 px or 5 ppt
-bindsym Ctrl+$mod+Down resize shrink height 5 px or 5 ppt
+bindsym Ctrl+$mod+Left resize shrink width 10 px or 10 ppt
+bindsym Ctrl+$mod+Right resize grow width 10 px or 10 ppt
+bindsym Ctrl+$mod+Up resize grow height 10 px or 10 ppt
+bindsym Ctrl+$mod+Down resize shrink height 10 px or 10 ppt
 
 # Lock screen
 bindsym $mod+Escape exec betterlockscreen -l blur
@@ -307,8 +307,11 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
+exec --no-startup-id conky -c ~/.config/conky/stats &
+exec --no-startup-id conky -c ~/.config/conky/shortcuts &
+exec --no-startup-id conky -c /home/ringo/.config/conky/log &
 exec --no-startup-id "sh -c 'sleep 60; exec evolution'" # sleep 60 seconds before autostarting evolution
 exec --no-startup-id firefox
 # exec_always --no-startup-id ff-theme-util
@@ -387,7 +390,7 @@ smart_borders on
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
+bindsym $mod+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
