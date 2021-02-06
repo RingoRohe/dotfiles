@@ -1,1 +1,1 @@
-conky -c ~/.config/conky/stats
+conky -c ~/.config/conky/stats &

@@ -31,11 +31,12 @@ ${voffset 10}${color2}${alignr}${execi 1200 whoami}@${nodename}
 ${alignr}${color2}${font Bitstream Vera Sans:size=8}uptime: ${color}${uptime_short}
 ${voffset 5}${color2}${font Bitstream Vera Sans:size=8}${alignr}kernel: ${color}${kernel}
 #
-${voffset 20}${alignr}${color1}i3 ${execi 10000 i3 --version | awk '{print $3}'}
+${voffset 20}${alignr}${color1}${execi 10000 cinnamon --version}
 ${alignr}${color1}Node ${execi 10000 node -v}
 ${alignr}${color1}NPM ${execi 10000 npm -v}
 ${alignr}${color1}${execi 10000 httpd -v | head -1 | awk '{print $3}'}
-${alignr}${color1}PHP ${execi 10000 php-fpm -v | head -1 | awk '{print $2}'}
+${alignr}${color1}Nginx ${execi 10000 nginx -v 2>&1 | cut -d '/' -f 2}
+${alignr}${color1}PHP ${execi 10000 php-fpm -v| head -1 | cut -d ' ' -f 2}
 $font
 ${goto 40}${color}Storage${alignr}$color1${fs_bar 8,200 /}
 ${goto 40}${color}Memory${color}$alignr${memgraph 0 40,200 555555 5D7B86}
