@@ -1,0 +1,11 @@
+configuration {
+    modi: "drun,window,run,ssh";
+    width: 600;
+    lines: 15;
+    columns: 1;
+    font: "Open Sans 14";
+    bw: 1;
+    show-icons: true;
+    matching: "fuzzy";
+}
+@import "/usr/share/rofi/themes/Monokai.rasi"
