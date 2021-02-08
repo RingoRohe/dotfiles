@@ -1,0 +1,5 @@
+[user]
+	email = rrohe@matero.de
+	name = Ringo Rohe
+[pull]
+	rebase = false
