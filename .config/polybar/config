@@ -338,7 +338,7 @@ format-charging-prefix-foreground = ${colors.background}
 format-charging-prefix-background = ${colors.foreground}
 format-charging-prefix-padding = 2
 
-format-charging = <label-charging> <animation-charging>
+format-charging = "<label-charging><animation-charging> "
 format-charging-underline = ${colors.transparent}
 format-charging-background = ${colors.primary}
 format-charging-foreground = ${colors.foreground}
@@ -348,7 +348,7 @@ format-discharging-prefix-foreground = ${colors.background}
 format-discharging-prefix-background = ${colors.foreground}
 format-discharging-prefix-padding = 2
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = "<label-discharging><animation-discharging> "
 format-discharging-underline = ${self.format-charging-underline}
 format-discharging-background = ${colors.primary}
 format-discharging-foreground = ${colors.foreground}

@@ -309,9 +309,10 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id conky -c ~/.config/conky/stats &
-exec --no-startup-id conky -c ~/.config/conky/shortcuts &
-exec --no-startup-id conky -c /home/ringo/.config/conky/log &
+exec --no-startup-id ~/.config/conky/conky-startup.sh
+# exec --no-startup-id conky -c ~/.config/conky/stats &
+# exec --no-startup-id conky -c ~/.config/conky/shortcuts &
+# exec --no-startup-id conky -c /home/ringo/.config/conky/log &
 exec --no-startup-id "sh -c 'sleep 60; exec evolution'" # sleep 60 seconds before autostarting evolution
 exec --no-startup-id firefox
 # exec_always --no-startup-id ff-theme-util
