@@ -1,0 +1,40 @@
+#!/bin/sh
+
+FILE=`zenity --file-selection --directory --title="Ordner wählen"`
+UNBOIL=false
+
+case $? in
+    0)
+        cd $FILE
+
+        # clone repository
+        git clone https://github.com/brocessing/kirby-webpack . | zenity --progress --title="Kirby wird installiert" --text="clone Kirby Webpack…" --pulsate --auto-close
+        
+        # npm install
+        npm install | zenity --progress --title="Kirby wird installiert" --text="lade npm Module …" --pulsate --auto-close
+        
+        # check for unboil
+        if [ `npm list -g | grep -c unboil` -eq 0 ]; then
+            zenity --question --text="CLI package.json Boilerplate" --title="Unboil installieren?" --width=300
+            if [ $? = 0 ]; then
+                PW=`zenity --password --title="sudo password prompt" --timeout=10`
+                echo -e $PW
+                echo -e $PW | sudo -S npm -g install unboil | zenity --progress --title="installiere" --text="installiere unboil…" --pulsate --auto-close
+                UNBOIL=true
+            else
+                UNBOIL=false
+                exit
+            fi
+        else
+            UNBOIL=true
+        fi
+        
+        if [ $UNBOIL = true ]; then
+            zenity --info --text="Führe \"npm start\" aus um Server und Webpack-Task zu starten.\n\nNicht vergessen unboil auszuführen. :)" --title="Installation abgeschlossen" --width=300
+        else
+            zenity --info --text="Führe \"npm start\" aus um Server und Webpack-Task zu starten." --title="Installation abgeschlossen" --width=300
+        fi
+        ;;
+    -1)
+        zenity --info --text="Ein unerwarteter Fehler ist aufgetreten." --title="Fehler";;
+esac
