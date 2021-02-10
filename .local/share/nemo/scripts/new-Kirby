@@ -18,7 +18,6 @@ case $? in
             zenity --question --text="CLI package.json Boilerplate" --title="Unboil installieren?" --width=300
             if [ $? = 0 ]; then
                 PW=`zenity --password --title="sudo password prompt" --timeout=10`
-                echo -e $PW
                 echo -e $PW | sudo -S npm -g install unboil | zenity --progress --title="installiere" --text="installiere unboil…" --pulsate --auto-close
                 UNBOIL=true
             else
