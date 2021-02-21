@@ -1,3 +1,0 @@
-conky -c ~/.config/conky/shortcuts &
-conky -c ~/.config/conky/stats &
-conky -c ~/.config/conky/log &
