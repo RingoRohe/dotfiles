@@ -1,0 +1,1 @@
+conky-startup.sh##hostname.ThinkPad-T570
