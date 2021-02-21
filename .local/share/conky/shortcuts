@@ -18,11 +18,25 @@ conky.config = {
 	use_xft = true,
 }
 conky.text = [[
-${color2}open new terminal - ${color}mod+Enter
+${color2}open terminal - ${color}mod+Enter
+${color2}open terminal (floating) - ${color}mod+Enter
 ${color2}kill focused - ${color}mod+Shift+q
-${color2}open browser - ${color}mod+F2
-${color2}open nemo - ${color}mod+e
+${color2}open Firefox - ${color}mod+F1
+${color2}open Chrome - ${color}mod+Shift+F1
+${color2}open VSCode - ${color}mod+F2
+${color2}open PhpStorm - ${color}mod+Shift+F2
+${color2}open Pamac - ${color}mod+F9
+${color2}open Pamac (updates) - ${color}mod+Shift+F9
+${color2}open HTop - ${color}mod+F10
+${color2}open Nemo - ${color}mod+F12
+${color2}open Ranger - ${color}mod+Shift+F12
+
+${color2}Screenshot - ${color}print
+${color2}Screenshot (window) - ${color}mod+print
+${color2}Screenshot (selection) - ${color}mod+shift+print
+
 ${color2}open pamac - ${color}mod+p
+${color2}open nemo - ${color}mod+e
 ${color2}toggle split direction - ${color}mod+q
 ${color2}rofi - ${color}Ctrl+space
 ${color2}bmenu - ${color}mod+Ctrl+b
@@ -32,9 +46,6 @@ ${color2}navigate workspaces - ${color}Ctrl+alt+arrowkeys
 ${color2}toggle floating - ${color}mod+Shift+Space
 ${color2}switch between floating and tiling windows - ${color}mod+Space
 
-${color2}resize mode - ${color}mod+r
-    ${color}arrowkeys to resize
-    ${color}Return or Esc to leave resize mode
 ${color2}move window - ${color}mod+shift+arrowkeys
 ${color2}resize window - ${color}mod+Ctrl+arrowkeys
 

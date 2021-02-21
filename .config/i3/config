@@ -76,50 +76,38 @@ bindsym $mod+Shift+F9 exec pamac-manager --updates
 bindsym $mod+F10 exec $terminal -e htop
 bindsym $mod+F12 exec nemo
 bindsym $mod+Shift+F12 exec $terminal -e ranger
-# bindsym $mod+Shift+F3 exec pcmanfm_pkexec
+
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-### custom bindings
 bindsym $mod+e exec nemo
 bindsym $mod+p exec pamac-manager
-# bindsym $mod+End exec --no-startup-id i3exit hibernate, mode "default"
 bindsym $mod+End exec betterlockscreen -s blur
 
 focus_follows_mouse no
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-# bindsym $mod+Shift+j move left
-# bindsym $mod+Shift+k move down
-# bindsym $mod+Shift+l move up
-# bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
+# move focussed window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth no
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
@@ -321,22 +309,13 @@ exec --no-startup-id xidlehook --not-when-audio --timer 600 "betterlockscreen -l
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-# exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
 exec --no-startup-id conky-startup
-# exec --no-startup-id conky -c ~/.config/conky/stats &
-# exec --no-startup-id conky -c ~/.config/conky/shortcuts &
-# exec --no-startup-id conky -c /home/ringo/.config/conky/log &
 exec --no-startup-id "sh -c 'sleep 60; exec evolution'" # sleep 60 seconds before autostarting evolution
 exec --no-startup-id firefox
-# exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
