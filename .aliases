@@ -1,0 +1,21 @@
+# operations
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias more=less
+alias rm='rm -i'                          # confirm before
+alias mv='mv -i'                          # confirm before
+alias mkd="mkdir -pv"
+
+# youtube
+alias yt="youtube-dl --add-metadata -i"
+alias yta="yt -x -f bestaudio/best"
+
+# colors
+alias ls='ls -Ahl --color=auto'           # list all files as list in human-readable
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias diff="diff --color=auto" \
+alias ccat="highlight"

@@ -104,9 +104,10 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias rm='rm -i'
-alias mv='mv -i'
-alias ls='ls -Ahl'
+# include aliases if it exists
+if [ -f $HOME/.aliases ]; then
+    . $HOME/.aliases
+fi
 
 # run neofetch if present
 if [ -f /usr/bin/neofetch ]
