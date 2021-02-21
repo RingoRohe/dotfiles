@@ -1,1 +1,1 @@
-conky-startup.sh##hostname.ThinkPad-T570
+conky-startup.sh##hostname.ManjaroVM

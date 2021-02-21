@@ -330,7 +330,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id ~/.config/conky/conky-startup.sh
+exec --no-startup-id conky-startup
 # exec --no-startup-id conky -c ~/.config/conky/stats &
 # exec --no-startup-id conky -c ~/.config/conky/shortcuts &
 # exec --no-startup-id conky -c /home/ringo/.config/conky/log &
