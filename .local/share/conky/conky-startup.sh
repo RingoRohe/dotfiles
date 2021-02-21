@@ -1,1 +1,0 @@
-conky-startup.sh##hostname.ManjaroVM
