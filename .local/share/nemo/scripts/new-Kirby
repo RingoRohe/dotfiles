@@ -8,7 +8,7 @@ case $? in
         cd $FILE
 
         # clone repository
-        git clone https://github.com/brocessing/kirby-webpack . | zenity --progress --title="Kirby wird installiert" --text="clone Kirby Webpack…" --pulsate --auto-close
+        git clone https://github.com/RingoRohe/kirby-webpack . | zenity --progress --title="Kirby wird installiert" --text="clone Kirby Webpack…" --pulsate --auto-close
         
         # npm install
         npm install | zenity --progress --title="Kirby wird installiert" --text="lade npm Module …" --pulsate --auto-close
@@ -21,7 +21,6 @@ case $? in
                 echo -e $PW | sudo -S npm -g install unboil | zenity --progress --title="installiere" --text="installiere unboil…" --pulsate --auto-close
                 UNBOIL=true
             else
-                UNBOIL=false
                 exit
             fi
         else

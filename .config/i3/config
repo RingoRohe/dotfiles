@@ -37,6 +37,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec $terminal --class floating
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -66,11 +67,16 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F1 exec firefox
+bindsym $mod+Shift+F1 exec google-chrome
+bindsym $mod+F2 exec code
+bindsym $mod+Shift+F2 exec phpstorm
+bindsym $mod+F9 exec pamac-manager
+bindsym $mod+Shift+F9 exec pamac-manager --updates
+bindsym $mod+F10 exec $terminal -e htop
+bindsym $mod+F12 exec nemo
+bindsym $mod+Shift+F12 exec $terminal -e ranger
+# bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -201,18 +207,31 @@ bindsym Ctrl+$modAlt+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym Ctrl+$modAlt+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # Open applications on specific workspaces
+
+# How do you get the class info?
+
+# Run xprop and click on the window you want to capture.
+# For example while Emacs is running, using another terminal execute xprop and then click on the Emacs window.
+# In the output you will find :
+
+#     WM_CLASS(STRING) = "emacs", "Emacs"
+
+# The first string is the instance and the second one is the class.
+
 # assign [class="Thunderbird"] $ws1
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="firefox"] $ws1
 assign [class="Code"] $ws2
 assign [class="Evolution"] $ws9
+assign [class="firefox"] $ws1
+assign [class="jetbrains-phpstorm"] $ws2
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
+for_window [class="File-roller"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
@@ -237,6 +256,8 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [title="win0"] floating enable
+for_window [instance="floating"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
