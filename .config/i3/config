@@ -194,6 +194,17 @@ bindsym Ctrl+$modAlt+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym Ctrl+$modAlt+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym Ctrl+$modAlt+Shift+9 move container to workspace $ws9; workspace $ws9
 
+# swap workspaces
+bindsym $modAlt+Shift+1 exec i3-workspace-swap -d 1 -f
+bindsym $modAlt+Shift+2 exec i3-workspace-swap -d 2 -f
+bindsym $modAlt+Shift+3 exec i3-workspace-swap -d 3 -f
+bindsym $modAlt+Shift+4 exec i3-workspace-swap -d 4 -f
+bindsym $modAlt+Shift+5 exec i3-workspace-swap -d 5 -f
+bindsym $modAlt+Shift+6 exec i3-workspace-swap -d 6 -f
+bindsym $modAlt+Shift+7 exec i3-workspace-swap -d 7 -f
+bindsym $modAlt+Shift+8 exec i3-workspace-swap -d 8 -f
+bindsym $modAlt+Shift+9 exec i3-workspace-swap -d 9 -f
+
 # Open applications on specific workspaces
 
 # How do you get the class info?
