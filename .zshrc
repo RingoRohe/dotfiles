@@ -4,6 +4,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ringo/.oh-my-zsh"
 
+DEFAULT_USER=ringo
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -23,6 +25,9 @@ POWERLEVEL9K_CONTEXT_SUDO_BACKGROUND='088'
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="015"
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
+
+POWERLEVEL9K_ALWAYS_SHOW_USER=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
