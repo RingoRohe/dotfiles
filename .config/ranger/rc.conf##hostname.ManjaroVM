@@ -777,3 +777,6 @@ map th tab_new %%s
 
 # open with
 map <C-o> shell code %s
+
+# stuff
+map bg shell wal -i %s --saturate 0.7
