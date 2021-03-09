@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# a simple dmenu session script 
+#
+###
+
+DMENU='rofi -dmenu'
+choice=$(echo -e "shutdown\nreboot\nsuspend\nlogout\nhibernate\nlock" | $DMENU)
+
+case "$choice" in
+    shutdown) gnome-session-quit --power-off & ;;
+    reboot) gnome-session-quit --reboot & ;;
+    suspend) systemctl suspend & ;;
+    logout) gnome-session-quit --logout & ;;
+    hibernate) systemctl hibernate & ;;
+    lock) gnome-screensaver-command --lock & ;;
+esac
