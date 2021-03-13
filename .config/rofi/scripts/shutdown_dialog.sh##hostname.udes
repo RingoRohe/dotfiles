@@ -5,7 +5,7 @@
 ###
 
 DMENU='rofi -dmenu'
-choice=$(echo -e "shutdown\nreboot\nsuspend\nlogout\nhibernate\nlock" | $DMENU)
+choice=$(echo "shutdown\nreboot\nsuspend\nlogout\nhibernate\nlock" | $DMENU)
 
 case "$choice" in
     shutdown) gnome-session-quit --power-off & ;;
