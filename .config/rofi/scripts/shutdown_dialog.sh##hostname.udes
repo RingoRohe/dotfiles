@@ -5,13 +5,11 @@
 ###
 
 DMENU='rofi -dmenu'
-choice=$(echo "shutdown\nreboot\nsuspend\nlogout\nhibernate\nlock" | $DMENU)
+choice=$(echo "shutdown\nreboot\nlogout\nlock" | $DMENU)
 
 case "$choice" in
-    shutdown) gnome-session-quit --power-off & ;;
-    reboot) gnome-session-quit --reboot & ;;
-    suspend) systemctl suspend & ;;
-    logout) gnome-session-quit --logout & ;;
-    hibernate) systemctl hibernate & ;;
+    shutdown) gnome-session-quit --no-prompt --power-off & ;;
+    reboot) gnome-session-quit --no-prompt --reboot & ;;
+    logout) gnome-session-quit --no-prompt --logout & ;;
     lock) gnome-screensaver-command --lock & ;;
 esac

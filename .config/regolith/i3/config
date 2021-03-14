@@ -5,19 +5,15 @@
 set $mod Mod4
 set $modAlt Mod1
 set $terminal alacritty
-set $background '/home/ringo/Bilder/Wallpaper/cosmic-timetraveler-Wb2JCFVa59Q-unsplash.jpg'
-
-# update lockscreen image path
-exec --no-startup-id betterlockscreen -u $background
 
 # load background and colors with pywal
-exec_always --no-startup-id wal -i $background --saturate 0.7
+exec_always --no-startup-id wal -R
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 2
+default_border pixel 1
 default_floating_border normal
 
 # Hide borders
@@ -91,7 +87,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 bindsym $mod+e exec nemo
 bindsym $mod+p exec pamac-manager
-bindsym $mod+End exec betterlockscreen -s blur
+bindsym $mod+End exec gnome-screensaver-command --lock
 
 focus_follows_mouse no
 
@@ -270,27 +266,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# Set shut down, restart and locking features
-bindsym $mod+Shift+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    # bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym l exec betterlockscreen -l blur
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 # rofi shutdown menu
 bindsym $mod+0 exec sh /home/ringo/.config/rofi/scripts/shutdown_dialog.sh
 
@@ -316,21 +291,21 @@ bindsym Ctrl+$mod+Up resize grow height 10 px or 10 ppt
 bindsym Ctrl+$mod+Down resize shrink height 10 px or 10 ppt
 
 # Lock screen
-bindsym $mod+Escape exec betterlockscreen -l blur
+bindsym $mod+Escape exec gnome-screensaver-command --lock
 
 # Auto-lock Screen
-exec --no-startup-id xidlehook --not-when-audio --timer 600 "betterlockscreen -l blur" ''
+# not needed in regolith - done by the system
+# exec --no-startup-id xidlehook --not-when-audio --timer 600 "gnome-screensaver-command --lock" ''
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+# exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id clipit
 exec --no-startup-id conky-startup
 exec --no-startup-id "sh -c 'sleep 60; exec evolution'" # sleep 60 seconds before autostarting evolution
 exec --no-startup-id firefox
-exec_always --no-startup-id fix_xcursor
+# exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -439,7 +414,7 @@ mode "$mode_gaps_outer" {
 }
 
 # run user autostart script
-exec ~/.scripts/startup.sh
+# exec ~/.scripts/startup.sh
 
 # start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
