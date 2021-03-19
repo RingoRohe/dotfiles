@@ -8,6 +8,15 @@ alias rm='rm -i'                          # confirm before
 alias mv='mv -i'                          # confirm before
 alias mkd="mkdir -pv"
 
+# systemctl
+alias status="systemctl status"
+alias reload="sudo systemctl reload"
+
+# goto
+alias gd="cd ~/Downloads"
+alias gcc="cd ~/code"
+alias gcw="cd ~/code/web"
+
 # youtube
 alias yt="youtube-dl --add-metadata -i"
 alias yta="yt -x -f bestaudio/best"
