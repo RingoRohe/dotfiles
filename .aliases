@@ -10,6 +10,8 @@ alias mkd="mkdir -pv"
 
 # systemctl
 alias status="systemctl status"
+alias start="sudo systemctl start"
+alias stop="sudo systemctl stop"
 alias reload="sudo systemctl reload"
 
 # goto
