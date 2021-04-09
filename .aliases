@@ -15,9 +15,13 @@ alias stop="sudo systemctl stop"
 alias reload="sudo systemctl reload"
 
 # goto
+alias gvw="cd /var/www"
+alias gp="cd ~/Bilder"
 alias gd="cd ~/Downloads"
+alias gD="cd ~/Dokumente"
 alias gcc="cd ~/code"
 alias gcw="cd ~/code/web"
+alias gca="cd ~/code/app"
 
 # youtube
 alias yt="youtube-dl --add-metadata -i"
