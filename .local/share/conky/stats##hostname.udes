@@ -33,8 +33,8 @@ ${voffset 5}${color2}${font Bitstream Vera Sans:size=8}${alignr}kernel: ${color}
 ${voffset 20}${alignr}${color1}${execi 10000 cinnamon --version}
 ${alignr}${color1}Node ${execi 10000 node -v}
 ${alignr}${color1}NPM ${execi 10000 npm -v}
-${alignr}${color1}Nginx ${execi 10000 nginx -v 2>&1 | cut -d '/' -f 2}
-${alignr}${color1}PHP ${execi 10000 php-fpm -v| head -1 | cut -d ' ' -f 2}
+${alignr}${color1}Apache ${execi 10000 apache2 -v | head -1 | cut -d '/' -f 2 | cut -d ' ' -f 1}
+${alignr}${color1}PHP ${execi 10000 php -v | head -1 | cut -d ' ' -f 2}
 $font
 #
 ${voffset 10}${goto 40}${color}Storage${font Bitstream Vera Sans:bold:size=8}$alignr$fs_used_perc%$font

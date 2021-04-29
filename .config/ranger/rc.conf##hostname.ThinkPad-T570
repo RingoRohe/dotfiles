@@ -769,14 +769,20 @@ map g.c cd ~/.config
 map g.l cd ~/.local
 map gcc cd ~/code
 map gcw cd ~/code/web
-map gD cd ~/Downloads
+map gd cd ~/Downloads
+map gD cd ~/Dokumente
+map gp cd ~/Bilder
 
 # git
 map dgi shell git init %d
 
 # tab
 map th tab_new %%s
-map tD tab_new ~/Downloads
+map t.c tab_new ~/.config
+map t.l tab_new ~/.local
+map tp tab_new ~/Bilder
+map td tab_new ~/Downloads
+map tD tab_new ~/Dokumente
 map tcc tab_new ~/code
 map tcw tab_new ~/code/web
 
