@@ -224,7 +224,7 @@ bindsym $modAlt+Shift+9 exec i3-workspace-swap -d 9 -f
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 assign [class="Code"] $ws2
-assign [class="Evolution"] $ws9
+assign [class="Thunderbird"] $ws9
 assign [class="firefox"] $ws1
 assign [class="jetbrains-phpstorm"] $ws2
 
@@ -308,7 +308,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id clipit
 exec --no-startup-id conky-startup
-exec --no-startup-id "sh -c 'sleep 60; exec evolution'" # sleep 60 seconds before autostarting evolution
+exec --no-startup-id "sh -c 'sleep 60; exec thunderbird'" # sleep 60 seconds before autostarting Thunderbird
 exec --no-startup-id firefox
 # exec_always --no-startup-id fix_xcursor
 

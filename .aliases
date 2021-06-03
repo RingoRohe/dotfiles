@@ -15,6 +15,7 @@ alias stop="sudo systemctl stop"
 alias reload="sudo systemctl reload"
 
 # goto
+alias gh="cd ~"
 alias gvw="cd /var/www"
 alias gp="cd ~/Bilder"
 alias gd="cd ~/Downloads"
