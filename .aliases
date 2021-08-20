@@ -35,3 +35,4 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias diff="diff --color=auto" \
 alias ccat="highlight"
+alias f="fuck"

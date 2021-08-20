@@ -6,8 +6,16 @@ set $mod Mod4
 set $modAlt Mod1
 set $terminal alacritty
 
+# second screen
+# exec xrandr --output VGA-2 --auto --right-of VGA-1
+# bindsym $mod+Shift+Right workspace to output right
+# bindsym $mod+Shift+Left workspace to output left
+
 # load background and colors with pywal
 exec_always --no-startup-id wal -R
+
+## Launch // Look Selector // <><Alt> l ##
+bindsym $mod+$modAlt+l exec rofi -show look -modi look:/usr/share/rofi/modi/look-selector.sh
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -103,10 +111,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focussed window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+$modAlt+Left move left
+bindsym $mod+$modAlt+Down move down
+bindsym $mod+$modAlt+Up move up
+bindsym $mod+$modAlt+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth no
@@ -371,11 +379,11 @@ set_from_resource $tertiary i3wm.color5 #f0f0f0
 #############################
 
 # Set inner/outer gaps
-gaps inner 30
+gaps inner 15
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-# smart_gaps on
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
