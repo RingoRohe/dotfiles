@@ -15,6 +15,7 @@ alias stop="sudo systemctl stop"
 alias reload="sudo systemctl reload"
 
 # goto
+alias gh="cd ~"
 alias gvw="cd /var/www"
 alias gp="cd ~/Bilder"
 alias gd="cd ~/Downloads"
@@ -33,4 +34,4 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias diff="diff --color=auto" 
-
+alias f="fuck"
