@@ -28,9 +28,9 @@ alias yt="youtube-dl --add-metadata -i"
 alias yta="yt -x -f bestaudio/best"
 
 # colors
-alias ll='ls -Ahl --color=auto --group-directories-first'           # list all files as list in human-readable
+alias ll='ls -ahl --color=auto --group-directories-first'           # list all files as list in human-readable
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias diff="diff --color=auto" \
-alias ccat="highlight"
+alias diff="diff --color=auto" 
+
