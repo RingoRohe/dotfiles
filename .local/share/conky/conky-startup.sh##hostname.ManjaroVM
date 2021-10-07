@@ -1,2 +1,0 @@
-conky -c ~/.local/share/conky/shortcuts &
-conky -c ~/.local/share/conky/stats

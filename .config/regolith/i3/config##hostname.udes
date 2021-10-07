@@ -6,8 +6,16 @@ set $mod Mod4
 set $modAlt Mod1
 set $terminal alacritty
 
+# second screen
+# exec xrandr --output VGA-2 --auto --right-of VGA-1
+# bindsym $mod+Shift+Right workspace to output right
+# bindsym $mod+Shift+Left workspace to output left
+
 # load background and colors with pywal
 exec_always --no-startup-id wal -R
+
+## Launch // Look Selector // <><Alt> l ##
+bindsym $mod+$modAlt+l exec rofi -show look -modi look:/usr/share/rofi/modi/look-selector.sh
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -27,6 +35,11 @@ bindsym $mod+n border normal
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font xft:URWGothic-Book 11
+
+# greenclip clipboard manager
+set $greenclip greenclip
+bindsym $mod+Shift+v exec rofi -modi "clipboard:$greenclip print" -show clipboard
+exec --no-startup-id $greenclip daemon
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -98,10 +111,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focussed window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+$modAlt+Left move left
+bindsym $mod+$modAlt+Down move down
+bindsym $mod+$modAlt+Up move up
+bindsym $mod+$modAlt+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth no
@@ -219,7 +232,7 @@ bindsym $modAlt+Shift+9 exec i3-workspace-swap -d 9 -f
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 assign [class="Code"] $ws2
-assign [class="Evolution"] $ws9
+assign [class="Thunderbird"] $ws9
 assign [class="firefox"] $ws1
 assign [class="jetbrains-phpstorm"] $ws2
 
@@ -303,7 +316,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id clipit
 exec --no-startup-id conky-startup
-exec --no-startup-id "sh -c 'sleep 60; exec evolution'" # sleep 60 seconds before autostarting evolution
+exec --no-startup-id "sh -c 'sleep 60; exec thunderbird'" # sleep 60 seconds before autostarting Thunderbird
 exec --no-startup-id firefox
 # exec_always --no-startup-id fix_xcursor
 
@@ -366,11 +379,11 @@ set_from_resource $tertiary i3wm.color5 #f0f0f0
 #############################
 
 # Set inner/outer gaps
-gaps inner 30
+gaps inner 15
 gaps outer 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-# smart_gaps on
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
