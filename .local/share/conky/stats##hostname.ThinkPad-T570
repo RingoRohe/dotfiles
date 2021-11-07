@@ -1,7 +1,7 @@
 conky.config = {
 	alignment = 'top_right',
 	background = true,
-	color2 = '5D7B86',
+	color2 = 'C62D2B',
 	cpu_avg_samples = 2,
 	default_color = 'F9FAF9',
 	double_buffer = true,
@@ -14,9 +14,12 @@ conky.config = {
 	own_window = true,
     own_window_class = 'Conky',
     own_window_type = 'desktop',
-	own_window_transparent = true,
+	own_window_transparent = false,
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
 	update_interval = 1.0,
 	use_xft = true,
+	xinerama_head = 1
 }
 conky.text = [[
 ${voffset 8}$color2${font Bitstream Vera Sans:size=16}${time %A}$font\
@@ -31,7 +34,7 @@ ${voffset 10}${color2}${alignr}${execi 1200 whoami}@${nodename}
 ${alignr}${color2}${font Bitstream Vera Sans:size=8}uptime: ${color}${uptime_short}
 ${voffset 5}${color2}${font Bitstream Vera Sans:size=8}${alignr}kernel: ${color}${kernel}
 #
-${voffset 20}${alignr}${color1}${execi 10000 cinnamon --version}
+${voffset 20}${alignr}${color1}${execi 10000 gnome-shell --version}
 ${alignr}${color1}Node ${execi 10000 node -v}
 ${alignr}${color1}NPM ${execi 10000 npm -v}
 ${alignr}${color1}Nginx ${execi 10000 nginx -v 2>&1 | cut -d '/' -f 2}
@@ -47,12 +50,12 @@ ${voffset 5}${goto 40}$font$color2${top name 1}$alignr$color${top cpu 1}%
 ${goto 40}$color2${top name 2}$alignr$color${top cpu 2}%
 ${goto 40}$color2${top name 3}$alignr$color${top cpu 3}%
 ${goto 40}$color2${top name 4}$alignr$color${top cpu 4}%
-${voffset 5}${goto 40}${cpugraph 0 40,263 FFFFFF ff6600 -l -t}
+${voffset 5}${goto 40}${cpugraph 0 40,263 FFFFFF AA5500 -l -t}
 #
 ${voffset 20}${goto 40}${color}RAM${font Bitstream Vera Sans:bold:size=8}$alignr$mem ($memperc%)$font
 ${voffset 5}${goto 40}$color2${top_mem name 1}$alignr$color${top_mem mem_res 1}
 ${goto 40}$color2${top_mem name 2}$alignr$color${top_mem mem_res 2}
 ${goto 40}$color2${top_mem name 3}$alignr$color${top_mem mem_res 3}
 ${goto 40}$color2${top_mem name 4}$alignr$color${top_mem mem_res 4}
-${voffset 5}${goto 40}${memgraph 0 40,263 FFFFFF ff6600 -l -t}
+${voffset 5}${goto 40}${memgraph 0 40,263 FFFFFF AA5500 -l -t}
 ]]
