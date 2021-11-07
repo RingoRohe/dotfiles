@@ -1,7 +1,0 @@
-[Nemo Action]
-Name=open in VSCode
-Comment=open in VSCode
-Exec=<scripts/open_in_vscode.sh "%F">
-Selection=Any
-Extensions=dir
-Dependencies=zenity;
