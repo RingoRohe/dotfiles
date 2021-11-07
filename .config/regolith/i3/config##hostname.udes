@@ -4,7 +4,7 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 set $modAlt Mod1
-set $terminal alacritty
+set $terminal gnome-terminal
 
 # second screen
 # exec xrandr --output VGA-2 --auto --right-of VGA-1
@@ -231,10 +231,10 @@ bindsym $modAlt+Shift+9 exec i3-workspace-swap -d 9 -f
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="Code"] $ws2
+#assign [class="Code"] $ws2
 assign [class="Thunderbird"] $ws9
 assign [class="firefox"] $ws1
-assign [class="jetbrains-phpstorm"] $ws2
+#assign [class="jetbrains-phpstorm"] $ws2
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -269,6 +269,7 @@ for_window [title="win0"] floating enable
 for_window [title="Anwendungsverwaltung"] floating enable
 for_window [title="Aktualisierungsverwaltung"] floating enable
 for_window [instance="floating"] floating enable
+for_window [title="Welcome to PhpStorm"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -365,14 +366,14 @@ set_from_resource $primary i3wm.color2 #f0f0f0
 set_from_resource $secondary i3wm.color1 #f0f0f0
 set_from_resource $tertiary i3wm.color5 #f0f0f0
 
-# class                   border        backgr.       text            indic.   child_border
-  client.focused          #556064       $primary      $fg             $fg
-  client.focused_inactive #2F3D44       $bg-alt       $fg             #454948
-  client.unfocused        #2F3D44       #2F3D44       $fg             #454948
-  client.urgent           #ac8a8c       #FDF6E3       #1ABC9C         #268BD2
-  client.placeholder      $bg           #0c0c0c       $fg             $bg
+#       class                   border        backgr.       text            indic.   child_border
+        client.focused          #556064       $primary      $fg             $fg
+        client.focused_inactive #2F3D44       $bg-alt       $fg             #454948
+        client.unfocused        #2F3D44       #2F3D44       $fg             #454948
+        client.urgent           #ac8a8c       #FDF6E3       #1ABC9C         #268BD2
+        client.placeholder      $bg           #0c0c0c       $fg             $bg
 
-  client.background       $bg
+        client.background       $bg
 
 #############################
 ### settings for i3-gaps: ###

@@ -35,3 +35,22 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias diff="diff --color=auto" \
 alias f="fuck"
+
+function rdel {
+  if [ -z "$2" ]; then
+    DELPATH=${PWD}
+  else
+    DELPATH=$2
+  fi
+
+  if [ -z "$1" ]; then
+    PATTERN="*"
+  else
+    PATTERN=$1
+  fi
+
+  #find ${DELPATH} -type f -name ${PATTERN} -delete
+  echo $DELPATH
+  echo $PATTERN
+}
+
