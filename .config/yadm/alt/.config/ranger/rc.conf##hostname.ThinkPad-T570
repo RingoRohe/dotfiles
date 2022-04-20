@@ -772,6 +772,7 @@ map gcw cd ~/code/web
 map gd cd ~/Downloads
 map gD cd ~/Dokumente
 map gp cd ~/Bilder
+map gvw cd /var/www
 
 # git
 map dgi shell git init %d
