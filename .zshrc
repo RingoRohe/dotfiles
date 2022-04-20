@@ -134,8 +134,8 @@ then
 fi
 
 # load pywal colors
-if [ -f /usr/bin/wal ]
-then
-    (cat ~/.cache/wal/sequences &)
-fi
+#if [ -f /usr/bin/wal ]
+#then
+#    (cat ~/.cache/wal/sequences &)
+#fi
 
