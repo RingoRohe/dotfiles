@@ -36,6 +36,15 @@ alias fgrep='fgrep --color=auto'
 alias diff="diff --color=auto" \
 alias f="fuck"
 
+# npm
+alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
+
+# mount
+alias mntmusic='sudo mount -t nfs ds214se:/volume1/music /home/ringo/Musik'
+alias mntaudiobooks='sudo mount -t nfs ds214se:/volume1/audiobooks /home/ringo/Hörbücher'
+alias mntebooks='sudo mount -t nfs ds214se:/volume1/eBooks /home/ringo/Bücher'
+
+# stuff
 function rdel {
   if [ -z "$2" ]; then
     DELPATH=${PWD}

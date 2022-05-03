@@ -1,2 +1,2 @@
-killall conky
+killall conky;
 conky -c ~/.local/share/conky/stats
