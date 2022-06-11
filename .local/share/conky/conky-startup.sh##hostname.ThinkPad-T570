@@ -1,2 +1,7 @@
+#!/bin/bash
+
 killall conky;
-conky -c ~/.local/share/conky/stats
+sleep 2s
+
+conky -c $HOME/.local/share/conky/stats &> /dev/null &
+conky -c $HOME/.local/share/conky/time &> /dev/null &

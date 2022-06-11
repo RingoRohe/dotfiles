@@ -8,7 +8,7 @@ conky.config = {
 	font = 'Bitstream Vera Sans:size=11',
 	draw_shades = false,
 	gap_x = 25,
-	gap_y = 50,
+	gap_y = 25,
 	minimum_width = 300,
 	no_buffers = true,
 	own_window = true,
@@ -28,7 +28,7 @@ $color${voffset -30}$color${font Bitstream Vera Sans:size=18}${time %b}$font\
 ${voffset -3} $color${font Bitstream Vera Sans:size=20}${time %Y}
 ${voffset -20} $font$color2$hr
 #
-$color1${voffset 15}$font$alignr${execi 10000 awk -F= '/TION/ {print $2}' /etc/lsb-release |sed 's/"//g'} \
+$color1${voffset 10}$font$alignr${execi 10000 awk -F= '/TION/ {print $2}' /etc/lsb-release |sed 's/"//g'} \
 ${execi 10000 awk -F= '/EASE=/ {printf $2" "} /NAME/ {print $2}' /etc/lsb-release}
 ${voffset 10}${color2}${alignr}${execi 1200 whoami}@${nodename}
 ${alignr}${color2}${font Bitstream Vera Sans:size=8}uptime: ${color}${uptime_short}
