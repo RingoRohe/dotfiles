@@ -7,6 +7,7 @@ alias more=less
 alias rm='rm -i'                          # confirm before
 alias mv='mv -i'                          # confirm before
 alias mkd="mkdir -pv"
+alias pcp="rsync -r --progress"
 
 # systemctl
 alias status="systemctl status"
@@ -43,6 +44,9 @@ alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
 alias mntmusic='sudo mount -t nfs ds214se:/volume1/music /home/ringo/Musik'
 alias mntaudiobooks='sudo mount -t nfs ds214se:/volume1/audiobooks /home/ringo/Hörbücher'
 alias mntebooks='sudo mount -t nfs ds214se:/volume1/eBooks /home/ringo/Bücher'
+
+alias cpUdes2Rolf='rm /run/media/ringo/Rolf/VMs/Udes/Udes.vdi; sleep 3; pcp /home/ringo/VMs/Udes/Udes.vdi /run/media/ringo/Rolf/VMs/Udes';
+alias cpUdes2Home='rm /home/ringo/VMs/Udes/Udes.vdi; sleep 3; pcp /run/media/ringo/Rolf/VMs/Udes/Udes.vdi /home/ringo/VMs/Udes';
 
 # stuff
 function rdel {

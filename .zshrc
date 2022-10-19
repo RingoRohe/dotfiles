@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -12,22 +19,7 @@ DEFAULT_USER=ringo
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 POWERLEVEL9K_MODE='awesome-fontconfig'
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# powerlevel variables
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time time)
-
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='251'
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='235'
-POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='088'
-POWERLEVEL9K_CONTEXT_SUDO_BACKGROUND='088'
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="015"
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
-
-POWERLEVEL9K_ALWAYS_SHOW_USER=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -133,9 +125,10 @@ then
     neofetch
 fi
 
-# load pywal colors
-#if [ -f /usr/bin/wal ]
-#then
-#    (cat ~/.cache/wal/sequences &)
-#fi
+if [ -f /usr/bin/mcfly ]
+then
+    eval "$(mcfly init zsh)"
+fi
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
