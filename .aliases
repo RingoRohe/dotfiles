@@ -24,6 +24,7 @@ alias gD="cd ~/Dokumente"
 alias gcc="cd ~/code"
 alias gcw="cd ~/code/web"
 alias gca="cd ~/code/app"
+alias gap="cd /etc/apache2"
 
 # youtube
 alias yt="youtube-dl --add-metadata -i"
