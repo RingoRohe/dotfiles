@@ -130,5 +130,12 @@ then
     eval "$(mcfly init zsh)"
 fi
 
+#custom vars
+if [ -f /usr/bin/nmcli ];
+then
+    LOCALIP=$(nmcli device show | grep IP4.ADDRESS | head -1 | awk '{print $2}' | rev | cut -c 4- | rev)
+fi
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
