@@ -63,8 +63,13 @@ function rdel {
     PATTERN=$1
   fi
 
-  #find ${DELPATH} -type f -name ${PATTERN} -delete
-  echo $DELPATH
-  echo $PATTERN
+  echo "remove all $PATTERN Files from $DELPATH and below? [y/n]"
+  read answer
+
+  echo $answer
+
+  if [ $answer = "y" ]; then
+    find ${DELPATH} -type f -name ${PATTERN} -delete
+  fi
 }
 
