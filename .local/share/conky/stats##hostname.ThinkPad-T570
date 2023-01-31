@@ -19,7 +19,7 @@ conky.config = {
 	own_window_argb_value = 0,
 	update_interval = 1.0,
 	use_xft = true,
-	xinerama_head = 1
+	xinerama_head = 2
 }
 conky.text = [[
 ${voffset 8}$color2${font Bitstream Vera Sans:size=16}${time %A}$font\

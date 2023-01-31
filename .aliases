@@ -48,6 +48,7 @@ alias mntebooks='sudo mount -t nfs ds214se:/volume1/eBooks /home/ringo/Bücher'
 
 alias cpUdes2Rolf='rm /run/media/ringo/Rolf/VMs/Udes/Udes.vdi; sleep 3; pcp /home/ringo/VMs/Udes/Udes.vdi /run/media/ringo/Rolf/VMs/Udes';
 alias cpUdes2Home='rm /home/ringo/VMs/Udes/Udes.vdi; sleep 3; pcp /run/media/ringo/Rolf/VMs/Udes/Udes.vdi /home/ringo/VMs/Udes';
+alias cpUdes='rsync -rtuv --progress /run/media/ringo/Rolf/VMs/Udes/Udes.vdi /home/ringo/VMs/Udes/; rsync -rtuv --progress /home/ringo/VMs/Udes/Udes.vdi /run/media/ringo/Rolf/VMs/Udes'
 
 # stuff
 function rdel {
