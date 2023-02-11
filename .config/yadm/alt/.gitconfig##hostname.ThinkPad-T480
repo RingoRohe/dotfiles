@@ -1,0 +1,9 @@
+[user]
+	email = hallo@ringorohe.de
+	name = Ringo Rohe
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[core]
+	fileMode = false
