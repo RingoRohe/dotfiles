@@ -50,6 +50,10 @@ alias cpUdes2Rolf='rm /run/media/ringo/Rolf/VMs/Udes/Udes.vdi; sleep 3; pcp /hom
 alias cpUdes2Home='rm /home/ringo/VMs/Udes/Udes.vdi; sleep 3; pcp /run/media/ringo/Rolf/VMs/Udes/Udes.vdi /home/ringo/VMs/Udes';
 alias cpUdes='rsync -rtuv --progress /run/media/ringo/Rolf/VMs/Udes/Udes.vdi /home/ringo/VMs/Udes/; rsync -rtuv --progress /home/ringo/VMs/Udes/Udes.vdi /run/media/ringo/Rolf/VMs/Udes'
 
+# webserver
+alias webserver-start="VBoxManage startvm \"Ubuntu Server\" --type headless"
+alias webserver-stop="VBoxManage controlvm \"Ubuntu Server\" poweroff"
+
 # stuff
 function rdel {
   if [ -z "$2" ]; then

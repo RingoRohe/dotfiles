@@ -1,0 +1,26 @@
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	color2 = 'C62D2B',
+	cpu_avg_samples = 2,
+	default_color = 'F9FAF9',
+	double_buffer = true,
+	font = 'Bitstream Vera Sans:size=11',
+	draw_shades = true,
+	gap_x = 230,
+	gap_y = 40,
+	minimum_width = 300,
+	no_buffers = true,
+	own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	update_interval = 1.0,
+	use_xft = true,
+	xinerama_head = 2
+}
+conky.text = [[
+${font Bitstream Vera Sans:size=42}${time %H}:${time %M}${font Bitstream Vera Sans:size=18}${time %S}
+]]
