@@ -1,5 +1,5 @@
 [user]
-	email = hallo@ringorohe.de
+	email = ringo.rohe@kf-interactive.com
 	name = Ringo Rohe
 [pull]
 	rebase = false
@@ -7,3 +7,9 @@
 	defaultBranch = main
 [core]
 	fileMode = false
+[includeIf "gitdir:~/**/kfi/**"]
+	path = ~/.gitconfig_kfi
+[includeIf "gitdir:~/**/privat/"]
+	path = ~/.gitconfig_privat
+[includeIf "gitdir:~/**/the-surge/**"]
+	path = ~/.gitconfig_the-surge

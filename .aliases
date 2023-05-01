@@ -22,16 +22,19 @@ alias gp="cd ~/Bilder"
 alias gd="cd ~/Downloads"
 alias gD="cd ~/Dokumente"
 alias gcc="cd ~/code"
-alias gcw="cd ~/code/web"
-alias gca="cd ~/code/app"
-alias gap="cd /etc/apache2"
+alias gcw="cd ~/code/www"
+alias gcp="cd ~/code/privat"
+alias gct="cd ~/code/the-surge"
+alias gcs="cd ~/code/the-surge"
+alias gcS="cd ~/code/server"
+alias gck="cd ~/code/kfi"
 
 # youtube
 alias yt="youtube-dl --add-metadata -i"
 alias yta="yt -x -f bestaudio/best"
 
 # colors
-alias ll='ls -ahl --color=auto --group-directories-first'           # list all files as list in human-readable
+alias l='ls -ahl --color=auto --group-directories-first'           # list all files as list in human-readable
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -42,9 +45,10 @@ alias f="fuck"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
 
 # mount
-alias mntmusic='sudo mount -t nfs ds214se:/volume1/music /home/ringo/Musik'
+alias mntmusic='sudo mount -t nfs ds214se:/volume1/music /home/ringo/Musik/NAS'
 alias mntaudiobooks='sudo mount -t nfs ds214se:/volume1/audiobooks /home/ringo/Hörbücher'
 alias mntebooks='sudo mount -t nfs ds214se:/volume1/eBooks /home/ringo/Bücher'
+alias mntvideos='sudo mount -t nfs ds214se:/volume1/video /home/ringo/Videos/NAS'
 
 alias cpUdes2Rolf='rm /run/media/ringo/Rolf/VMs/Udes/Udes.vdi; sleep 3; pcp /home/ringo/VMs/Udes/Udes.vdi /run/media/ringo/Rolf/VMs/Udes';
 alias cpUdes2Home='rm /home/ringo/VMs/Udes/Udes.vdi; sleep 3; pcp /run/media/ringo/Rolf/VMs/Udes/Udes.vdi /home/ringo/VMs/Udes';
