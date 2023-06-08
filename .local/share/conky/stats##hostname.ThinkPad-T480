@@ -8,7 +8,7 @@ conky.config = {
 	font = 'Bitstream Vera Sans:size=11',
 	draw_shades = false,
 	gap_x = 25,
-	gap_y = 35,
+	gap_y = 10,
 	minimum_width = 300,
 	no_buffers = true,
 	own_window = true,
@@ -38,6 +38,7 @@ ${voffset 20}${alignr}${color1}${execi 10000 gnome-shell --version}
 #${alignr}${color1}Node ${execi 10000 volta run node -v}
 #${alignr}${color1}NPM ${execi 10000 npm -v}
 #${alignr}${color1}Test ${execi 10000 which volta}
+#${alignr}${color1}Shell ${execi 10000 echo $VOLTA_HOME}
 $font
 #
 ${voffset 10}${goto 40}${color}Storage${font Bitstream Vera Sans:bold:size=8}$alignr$fs_used_perc%$font
