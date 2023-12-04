@@ -117,7 +117,7 @@ set preview_images_method ueberzug
 
 # Delay in seconds before displaying an image with the w3m method.
 # Increase it in case of experiencing display corruption.
-set w3m_delay 0.05
+set w3m_delay 0.02
 
 # Manually adjust the w3mimg offset when using a terminal which needs this
 set w3m_offset 0
@@ -768,12 +768,11 @@ copytmap <ESC> q Q w <C-c>
 map g.c cd ~/.config
 map g.l cd ~/.local
 map gcc cd ~/code
-map gvw cd /var/www
 map gcw cd ~/code/web
-map gca cd ~/code/app
 map gd cd ~/Downloads
 map gD cd ~/Dokumente
 map gp cd ~/Bilder
+map gvw cd /var/www
 
 # git
 map dgi shell git init %d
@@ -782,7 +781,6 @@ map dgi shell git init %d
 map th tab_new %%s
 map t.c tab_new ~/.config
 map t.l tab_new ~/.local
-map tvw tab_new /var/www
 map tp tab_new ~/Bilder
 map td tab_new ~/Downloads
 map tD tab_new ~/Dokumente

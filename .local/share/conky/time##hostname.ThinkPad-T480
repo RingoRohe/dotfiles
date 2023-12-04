@@ -7,7 +7,7 @@ conky.config = {
 	double_buffer = true,
 	font = 'Bitstream Vera Sans:size=11',
 	draw_shades = true,
-	gap_x = 230,
+	gap_x = 25,
 	gap_y = 40,
 	minimum_width = 300,
 	no_buffers = true,
@@ -19,7 +19,7 @@ conky.config = {
 	own_window_argb_value = 0,
 	update_interval = 1.0,
 	use_xft = true,
-	xinerama_head = 2
+	xinerama_head = 0
 }
 conky.text = [[
 ${font Bitstream Vera Sans:size=42}${time %H}:${time %M}${font Bitstream Vera Sans:size=18}${time %S}
