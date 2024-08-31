@@ -1,3 +1,9 @@
+# run fastfetch if present
+if [ -f /usr/bin/fastfetch ]
+then
+    fastfetch
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -121,15 +127,10 @@ if [ -f $HOME/.aliases ]; then
 fi
 
 # run neofetch if present
-if [ -f /usr/bin/neofetch ]
-then
-    neofetch
-fi
-
-if [ -f /usr/local/bin/mcfly ]
-then
-    eval "$(mcfly init zsh)"
-fi
+# if [ -f /usr/bin/neofetch ]
+# then
+#     neofetch -l small
+# fi
 
 #custom vars
 if [ -f /usr/bin/nmcli ];
@@ -142,4 +143,8 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source "$HOME/.profile"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 

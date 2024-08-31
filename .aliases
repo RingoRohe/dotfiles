@@ -37,7 +37,7 @@ alias yta="yt -x -f bestaudio/best"
 alias mkepub="zip -rX ./ebook.epub mimetype META-INF/ OEBPS/"
 
 # colors
-alias l='ls -ahl --color=auto --group-directories-first'           # list all files as list in human-readable
+# alias l='ls -ahl --color=auto --group-directories-first'           # list all files as list in human-readable
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -60,19 +60,14 @@ alias umntebooks='sudo umount /home/ringo/Bücher'
 alias umntvideos='sudo umount /home/ringo/Videos/NAS'
 alias umntpodcasts='sudo umount /home/ringo/Podcasts'
 
-alias cpUdes2Rolf='rm /run/media/ringo/Rolf/VMs/Udes/Udes.vdi; sleep 3; pcp /home/ringo/VMs/Udes/Udes.vdi /run/media/ringo/Rolf/VMs/Udes';
-alias cpUdes2Home='rm /home/ringo/VMs/Udes/Udes.vdi; sleep 3; pcp /run/media/ringo/Rolf/VMs/Udes/Udes.vdi /home/ringo/VMs/Udes';
-alias cpUdes='rsync -rtuv --progress /run/media/ringo/Rolf/VMs/Udes/Udes.vdi /home/ringo/VMs/Udes/; rsync -rtuv --progress /home/ringo/VMs/Udes/Udes.vdi /run/media/ringo/Rolf/VMs/Udes'
-
-# webserver
-alias webserver-start="VBoxManage startvm \"Ubuntu Server\" --type headless"
-alias webserver-stop="VBoxManage controlvm \"Ubuntu Server\" poweroff"
-
-#fastlane
+# fastlane
 alias be="bundle exec"
 alias bef="bundle exec fastlane"
 alias bu="bundle update"
 alias bi="bundle install"
+
+# fzf
+alias fzp="fzf --preview 'bat --color=always {}' --border block"
 
 # stuff
 function rdel {
@@ -98,3 +93,10 @@ function rdel {
   fi
 }
 
+
+if [ -f /usr/bin/eza ]
+then
+    alias l="eza -lg --icons=auto --color-scale=all"
+    alias ll="eza -alg --icons=auto --color-scale=all"
+    alias lt="eza -algT --icons=auto --color-scale=all"
+fi

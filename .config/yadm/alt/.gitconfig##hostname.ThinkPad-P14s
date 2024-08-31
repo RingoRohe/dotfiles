@@ -1,5 +1,5 @@
 [user]
-	email = ringo.rohe@kf-interactive.com
+	email = hallo@ringorohe.de
 	name = Ringo Rohe
 [pull]
 	rebase = true
@@ -13,3 +13,5 @@
 	path = ~/.gitconfig_privat
 [includeIf "gitdir:~/**/the-surge/**"]
 	path = ~/.gitconfig_the-surge
+[includeIf "gitdir:~/**/the-aeffort/**"]
+	path = ~/.gitconfig_the-aeffort
