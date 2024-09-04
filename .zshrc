@@ -20,6 +20,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Android SDK
 export ANDROID_HOME="/home/ringo/Android/Sdk/"
 
+# default Editor
+export EDITOR="/usr/bin/vim"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
